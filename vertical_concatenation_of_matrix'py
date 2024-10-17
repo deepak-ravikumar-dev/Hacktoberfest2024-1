@@ -1,0 +1,29 @@
+# Function to perform vertical concatenation of a matrix
+def vertical_concatenation(matrix):
+    # Use list comprehension to concatenate elements of each column vertically
+    concatenated_result = [''.join(str(matrix[i][j]) for i in range(len(matrix))) for j in range(len(matrix[0]))]
+    return concatenated_result
+
+# Get the size of the matrix from the user
+rows = int(input("Enter the number of rows: "))
+columns = int(input("Enter the number of columns: "))
+
+# Initialize an empty matrix
+matrix = []
+
+# Get the matrix elements from the user
+print("Enter the elements of the matrix:")
+for i in range(rows):
+    row = []
+    for j in range(columns):
+        element = input(f"Element at position [{i}][{j}]: ")
+        row.append(element)
+    matrix.append(row)
+
+# Perform vertical concatenation on the matrix
+result = vertical_concatenation(matrix)
+
+# Print the result of vertical concatenation
+print("\nVertical Concatenation Result:")
+for element in result:
+    print(element)
